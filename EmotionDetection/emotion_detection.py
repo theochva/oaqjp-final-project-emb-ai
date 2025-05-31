@@ -11,8 +11,8 @@ def emotion_detector(text_to_analyze):
     """
 
     # URL of the emotion predict service
-    url = 'https://sn-watson-emotion.labs.skills.network'
-    url += '/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict'
+    url = 'https://sn-watson-emotion.labs.skills.network' \
+          '/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict'
 
     # Custom header specifying the model ID for the emotion predict service
     headers = {
@@ -25,6 +25,8 @@ def emotion_detector(text_to_analyze):
             "text": text_to_analyze
         }
     }
+
+    print(f'Received text to analyze: {text_to_analyze}')
 
     try:
         # Sending a POST request to the emotion predict API
